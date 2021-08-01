@@ -1,0 +1,44 @@
+.paid-indicator {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: red;
+  border-radius: 100%;
+}
+
+.card {
+  background: none !important;
+}
+
+.bi-info-circle-fill {
+  color: red;
+}
+
+.reciever-name {
+  margin-left: 6px;
+}
+
+ul li {
+  list-style: none;
+}
+
+.card-body strong {
+  font-weight: 600;
+  color: rgb(66, 66, 66);
+}
+
+.invoice-item-action {
+  float: right;
+}
+
+.invoice-item-action button {
+  margin: 0 0 0 10px;
+}
+
+.invoice-item-action button i {
+  margin: 0 5px;
+}
+
+.paid i {
+  margin-right: 5px;
+}

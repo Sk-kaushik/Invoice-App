@@ -1,0 +1,121 @@
+.form-container {
+  min-height: 90vh;
+  font-family: "Poppins";
+  /* box-shadow: 4px 4px 30px rgba(168, 168, 168, 0.315),
+    -2px -2px 10px rgba(184, 184, 184, 0.589) !important; */
+  border-radius: 20px;
+}
+
+.form-container .row {
+  height: 90vh !important;
+}
+
+.form-heading {
+  /* background: var(--gradient); */
+  border-radius: 20px 0 0 20px;
+}
+.form-to h5 {
+  color: rgb(68, 68, 68);
+}
+
+.input-group-text {
+  width: 40px !important;
+  border: none !important;
+  border-radius: 10px 0 0 10px !important;
+}
+.input-group-text i {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+
+.form-container .form-control {
+  height: 40px !important;
+  border-left: none !important;
+  border-radius: 0 10px 10px 0 !important;
+}
+
+.custom-radio label {
+  margin-left: 10px;
+}
+
+.sr-only {
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.custom-control-label {
+  font-size: 1.1em;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #111;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.form-container input:focus {
+  border-color: #111 !important;
+}
+input:focus {
+  box-shadow: none !important;
+}
+
+.form-container .save-btn {
+  margin-top: 70px;
+  background: rgb(61, 61, 61);
+  transition: 0.2s;
+  padding: 5px 30px;
+}
+.form-container .save-btn:hover {
+  background: #000;
+}
+
+.form-container .save-btn .bi {
+  margin-right: 10px !important;
+}

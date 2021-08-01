@@ -1,0 +1,51 @@
+nav {
+  min-width: 250px;
+  min-height: 100vh;
+  /* background: var(--gradient); */
+}
+
+.heading {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 1.2em;
+}
+
+.nav-items {
+  margin-top: 50px;
+}
+.nav-items a {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 20px 0;
+  transition: 0.3s;
+  padding: 15px 40px;
+}
+.nav-items a i {
+  font-size: 1.3em;
+  transition: 0.3s;
+}
+
+.nav-items a:hover {
+  background: #111111;
+  color: white;
+}
+.nav-items a:hover i {
+  color: rgb(24, 204, 0);
+}
+#plus-icon {
+  font-size: 1.7em;
+}
+
+.mr {
+  margin-right: 15px;
+}
+
+.bg-black {
+  background: #111111;
+}

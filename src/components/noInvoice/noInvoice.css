@@ -1,0 +1,9 @@
+.noInoviceBtn {
+  background: rgb(61, 61, 61) !important;
+  transition: 0.5s;
+  padding: 5px 30px;
+}
+
+.noInoviceBtn:hover {
+  background: #000 !important;
+}

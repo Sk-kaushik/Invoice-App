@@ -1,6 +1,7 @@
 import { createStore } from "redux";
 import rootReducer from "./reducers";
 
+// INITIAL STATE FOR DEMO PURPOSE
 const initialState = [
   {
     id: 1,

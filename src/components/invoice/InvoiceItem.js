@@ -14,7 +14,6 @@ import {
 import { setPaid, deleteInvoice } from "../../redux/actions/actions";
 import Prompt from "../prompt/Prompt";
 import { ToastContainer, toast } from "react-toastify";
-import moment from "moment";
 
 const InvoiceItem = ({ data }) => {
   const dispatch = useDispatch();
@@ -25,16 +24,19 @@ const InvoiceItem = ({ data }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  // HANDLE PAID BUTTON CLICK
   const handlePaid = () => {
     console.log("handle paid");
     dispatch(setPaid(data.id));
   };
 
+  // HANDLE DELETE BUTTON CLICK
   const handleDelete = (e) => {
     toast.success("deleted successfully");
     dispatch(deleteInvoice(data.id));
   };
 
+  // HANDLE PROMPT ON SUCCESS
   const handlePrompt = (e) => {
     handleShow();
   };

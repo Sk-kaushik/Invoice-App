@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Prompt = ({ show, handleClose }) => {
   const [showSpinner, setShowSpinner] = useState(false);
 
+  // SHOW OR HIDE SPINNER
   const handleSpinner = (e) => {
     let modalEmail = document.querySelector(`input[name="modalEmail"]`);
 

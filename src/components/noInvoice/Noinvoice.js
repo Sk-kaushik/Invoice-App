@@ -4,7 +4,10 @@ import Nodata from "./noData.svg";
 import "./noInvoice.css";
 
 const Noinvoice = ({ route }) => {
+  // SHOW PLACEHOLDER IMAGE RESPECTIVE TO THE URL
+
   const renderInvoice = () => {
+    // URL TO DUE INVOICES
     if (route === "/dueInvoices") {
       return (
         <div>
@@ -12,7 +15,9 @@ const Noinvoice = ({ route }) => {
           <h1 className="mt-5 mb-3">No Due Invoice</h1>
         </div>
       );
-    } else if (route === "/allInvoices") {
+    }
+    // URL TO ALL INVOICES
+    else if (route === "/allInvoices") {
       return (
         <div>
           <img src={Nodata} className="col-md-5" alt="" />
@@ -22,14 +27,20 @@ const Noinvoice = ({ route }) => {
           </Link>
         </div>
       );
-    } else if (route === "/lateInvoices") {
+    }
+
+    // URL TO LATE INVOICES
+    else if (route === "/lateInvoices") {
       return (
         <div>
           <img src={Nodata} className="col-md-5" alt="" />
           <h1 className="mt-5 mb-3">No Late Invoice</h1>
         </div>
       );
-    } else if (route === "/paidInvoices") {
+    }
+
+    // URL TO PAID INVOICES
+    else if (route === "/paidInvoices") {
       return (
         <div>
           <img src={Nodata} className="col-md-5" alt="" />

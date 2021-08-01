@@ -2,10 +2,11 @@ import moment from "moment";
 
 const rootReducer = (state, action) => {
   switch (action.type) {
+    // SAVE INVOICE
     case "saveInvoice":
-      console.log("data");
       return [...state, action.data];
 
+    // TOGGLE PAID AND NOT PAID
     case "setPaid":
       return state.map((item) => {
         if (item.id === action.data) {
@@ -19,6 +20,7 @@ const rootReducer = (state, action) => {
         return item;
       });
 
+    // DELETE INVOICE
     case "deleteInvoice":
       return state.filter((item) => item.id !== action.data);
     default:

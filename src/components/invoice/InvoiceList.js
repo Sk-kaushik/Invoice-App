@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
 import moment from "moment";
 
-// COMPONENTS
+// componentONENTS
 import InvoiceItem from "./InvoiceItem";
 import NoInvoice from "../noInvoice/Noinvoice";
 
@@ -11,13 +11,9 @@ import NoInvoice from "../noInvoice/Noinvoice";
 import "./invoice.css";
 
 const InvoiceList = ({ match }) => {
-  // const invoiceData = useSelector((state) => state)
-  //   ? useSelector((state) => state)
-  //   : [];
-
+  // GETTING DATA FROM REDUX STORE
   const invoiceData = useSelector((state) => {
     if (state.length > 0) {
-      console.log(state);
       return state;
     }
     return [];
@@ -26,35 +22,64 @@ const InvoiceList = ({ match }) => {
   const renderInvoices = () => {
     var currentDate = moment().format("YYYY/MM/DD");
 
+    // URL TO ALL INVOICES
     if (match.path === "/allInvoices") {
-      var comp = invoiceData.map((data) => (
+      // MAP THROUGH ALL ITEMS AND RETURN LIST OF INVOICES
+      var component = invoiceData.map((data) => (
         <InvoiceItem data={data} key={data.id} />
       ));
 
-      return comp.length > 0 ? comp : <NoInvoice route={"/allInvoices"} />;
-    } else if (match.path === "/dueInvoices") {
+      // RETURN COMPONENT IF DATA IS PRESENT ELSE SHOW PLACEHOLDER IMAGE
+      return component.length > 0 ? (
+        component
+      ) : (
+        <NoInvoice route={"/allInvoices"} />
+      );
+    }
+    // URL TO DUE INVOICES
+    else if (match.path === "/dueInvoices") {
+      // RETURN LIST OF INVOICES THAT ARE NOT PAID
       var invoices = invoiceData.filter((item) => !item.paid);
       let dueInvoices = invoices.filter((item) => item.lastDate < currentDate);
 
-      comp = dueInvoices.map((data) => (
+      component = dueInvoices.map((data) => (
         <InvoiceItem data={data} key={data.id} />
       ));
 
-      return comp.length > 0 ? comp : <NoInvoice route={"/dueInvoices"} />;
+      // RETURN COMPONENT IF DATA IS PRESENT ELSE SHOW PLACEHOLDER IMAGE
+      return component.length > 0 ? (
+        component
+      ) : (
+        <NoInvoice route={"/dueInvoices"} />
+      );
     } else if (match.path === "/lateInvoices") {
+      // REUTRN LIST OF LATE INVOICES
       invoices = invoiceData.filter((item) => item.paid);
       let dueInvoices = invoices.filter((item) => item.paidOn > item.lastDate);
 
-      comp = dueInvoices.map((data) => (
+      component = dueInvoices.map((data) => (
         <InvoiceItem data={data} key={data.id} />
       ));
 
-      return comp.length > 0 ? comp : <NoInvoice route={"/lateInvoices"} />;
+      // RETURN COMPONENT IF DATA IS PRESENT ELSE SHOW PLACEHOLDER IMAGE
+      return component.length > 0 ? (
+        component
+      ) : (
+        <NoInvoice route={"/lateInvoices"} />
+      );
     } else if (match.path === "/paidInvoices") {
+      // RETURN LIST OF PAID INVOICES
       invoices = invoiceData.filter((item) => item.paid);
-      comp = invoices.map((data) => <InvoiceItem data={data} key={data.id} />);
+      component = invoices.map((data) => (
+        <InvoiceItem data={data} key={data.id} />
+      ));
 
-      return comp.length > 0 ? comp : <NoInvoice route={"/paidInvoices"} />;
+      // RETURN COMPONENT IF DATA IS PRESENT ELSE SHOW PLACEHOLDER IMAGE
+      return component.length > 0 ? (
+        component
+      ) : (
+        <NoInvoice route={"/paidInvoices"} />
+      );
     }
   };
 

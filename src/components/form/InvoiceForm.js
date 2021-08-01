@@ -10,6 +10,7 @@ import "./form.css";
 const InvoiceForm = () => {
   const dispatch = useDispatch();
 
+  // GET VALUES OF INPUT FROM FORM
   const getFormValues = (e) => {
     e.preventDefault();
 
@@ -42,6 +43,8 @@ const InvoiceForm = () => {
     };
 
     toast.success("Saved Successfully!");
+
+    // DISPATCH SAVE INVOICE ACTION
     dispatch(saveInvoice(obj));
   };
 
